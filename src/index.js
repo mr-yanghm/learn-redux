@@ -5,13 +5,14 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import rootReducer from "./modules";
 import { createStore } from "redux";
+import { Provider } from "react-redux";
 
 const store = createStore(rootReducer); // 스토어를 만듭니다.
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 
